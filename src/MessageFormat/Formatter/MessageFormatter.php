@@ -195,10 +195,10 @@ final class MessageFormatter
                 $variantKey = $keyNode->value;
                 $isMatch = false;
 
-                if ($variable->selector instanceof SelectorFunction) {
-                    $isMatch = $variable->selector->match($variantKey, $variable->value, $variable->parameters);
+                if ($variable?->selector instanceof SelectorFunction) {
+                    $isMatch = $variable->selector->match($variantKey, $variable?->value, $variable?->parameters);
                 } else {
-                    $isMatch = $variable->value === $variantKey;
+                    $isMatch = $variable?->value === $variantKey;
                 }
 
                 if (! $isMatch) {
